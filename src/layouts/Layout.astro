@@ -1,0 +1,83 @@
+---
+import '@/styles/globals.css'
+import { Font } from 'astro:assets'
+import { SEO } from 'astro-seo'
+import SiteHeader from '@/components/SiteHeader.astro'
+import SiteFooter from '@/components/SiteFooter.astro'
+import FloatingWhatsApp from '@/components/FloatingWhatsApp.astro'
+import WuppycmsBridge from '@/components/WuppycmsBridge.astro'
+import { siteSettings } from '@/data/site'
+
+interface Props {
+  title?: string
+  description?: string
+  image?: string
+}
+
+const {
+  title: rawTitle = `${siteSettings.brandName}`,
+  description: rawDescription = siteSettings.heroDescription,
+} = Astro.props
+const title = rawTitle.length > 60 ? `${rawTitle.slice(0, 57).trimEnd()}...` : rawTitle
+const description = rawDescription.length > 155 ? `${rawDescription.slice(0, 152).trimEnd()}...` : rawDescription
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin)
+const imageUrl = new URL('/og-image.webp', Astro.site ?? Astro.url.origin).href
+---
+
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <Font cssVariable="--font-sans" preload />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#121820" />
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonical}
+      openGraph={{
+        basic: {
+          title,
+          type: 'website',
+          image: imageUrl,
+          url: canonical,
+        },
+        optional: {
+          description,
+          locale: 'tr_TR',
+          siteName: siteSettings.brandName,
+        },
+        image: {
+          alt: title,
+        },
+      }}
+      twitter={{
+        card: 'summary_large_image',
+        title,
+        description,
+        image: imageUrl,
+        imageAlt: title,
+      }}
+      robotsExtras="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Karakas Mühendislik" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body class="font-sans">
+    <SiteHeader />
+    <slot />
+    <SiteFooter />
+    <FloatingWhatsApp />
+    <WuppycmsBridge />
+    <script is:inline>
+      const loadInit = () => import('/scripts/motion-init.js')
+      window.addEventListener('scroll', loadInit, { once: true, passive: true })
+      window.addEventListener('pointerdown', loadInit, { once: true })
+      window.addEventListener('keydown', loadInit, { once: true })
+    </script>
+  </body>
+</html>

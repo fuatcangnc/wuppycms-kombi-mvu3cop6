@@ -1,0 +1,61 @@
+---
+import { Icon } from 'astro-icon/components'
+import Brand from './Brand.astro'
+import CtaBanner from './CtaBanner.astro'
+import { defaultServices, serviceCategories, siteSettings, phoneHref, whatsappHref } from '@/data/site'
+import content from '@/data/content.json'
+
+const automotive = content.automotive === true
+const footerGroups = serviceCategories
+  .map((category) => ({
+    category,
+    services: defaultServices.filter((service) => service.category === category).sort((a, b) => a.order - b.order),
+  }))
+  .filter((group) => group.services.length > 0)
+  .slice(0, 4)
+const trustItems = automotive
+  ? ['TSE onay süreci', 'Teknik belge kontrolü', 'Ruhsata işletme desteği']
+  : [siteSettings.workHours, siteSettings.location, 'Garantili işçilik']
+
+const mapHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteSettings.location)}`
+const quickLinks = [
+  ['Ana Sayfa', '/'],
+  ['Hakkımızda', '/hakkimizda'],
+  ['Belgelerimiz', '/belgelerimiz'],
+  ['Blog / Bilgi Merkezi', '/blog'],
+  ['İletişim ve Konum', '/iletisim'],
+]
+
+---
+
+<!-- CTA Banner -->
+<CtaBanner />
+
+<!-- Footer Main -->
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <section class="footer-brand" aria-labelledby="footer-brand-title">
+      <h2 class="sr-only" id="footer-brand-title">{siteSettings.brandName}</h2>
+      <Brand inverse />
+      <p>{content.heroDescription || siteSettings.heroDescription}</p>
+      <ul class="trust-list" aria-label="Hizmet kapsamı">{trustItems.map((item) => <li>{item}</li>)}</ul>
+      <ul class="social-list" aria-label="Sosyal medya hesapları"><li><a aria-label="Facebook" href={siteSettings.facebook}><Icon name="simple-icons:facebook" size={16} /></a></li><li><a aria-label="Instagram" href={siteSettings.instagram}><Icon name="simple-icons:instagram" size={16} /></a></li><li><a aria-label="YouTube" href={siteSettings.youtube}><Icon name="simple-icons:youtube" size={16} /></a></li></ul>
+    </section>
+    <nav class="footer-column" aria-labelledby="footer-services-title">
+      <h3 id="footer-services-title">Hizmetlerimiz</h3>
+      {footerGroups.map((group) => (
+        <>
+          <p class="footer-group-title">{group.category}</p>
+          <ul class="numbered-list">
+            {group.services.slice(0, 4).map((service) => (
+              <li><a href={`/${service.slug}`}>{service.shortTitle}</a></li>
+            ))}
+          </ul>
+        </>
+      ))}
+    </nav>
+    <nav class="footer-column" aria-labelledby="footer-corporate-title"><h3 id="footer-corporate-title">Kurumsal</h3><ul>{quickLinks.map(([label, href]) => <li><a href={href}>{label}</a></li>)}</ul></nav>
+    <section class="footer-column footer-contact" aria-labelledby="footer-contact-title"><h3 id="footer-contact-title">İletişim ve ofis</h3><address><a href={phoneHref}><Icon name="lucide:phone" size={16} /><span><small>Telefon</small>{siteSettings.phone}</span></a><a href={`mailto:${siteSettings.email}`}><Icon name="lucide:mail" size={16} /><span><small>E-posta</small>{siteSettings.email}</span></a><a href={mapHref} target="_blank" rel="noreferrer"><Icon name="lucide:map-pin" size={16} /><span><small>Ofis</small>{siteSettings.location}</span></a><div><Icon name="lucide:clock-3" size={16} /><span><small>Çalışma saatleri</small>{siteSettings.workHours}<small>Pazar: Kapalı</small></span></div></address></section>
+  </div>
+  <div class="shell footer-bottom"><p>© {new Date().getFullYear()} {siteSettings.brandName}. Tüm hakları saklıdır.</p><nav aria-label="Yasal bağlantılar"><a href="/cerez-politikasi">Çerez Politikası</a><a href="/gizlilik-ve-kvkk-politikasi">Gizlilik ve KVKK</a></nav></div>
+</footer>

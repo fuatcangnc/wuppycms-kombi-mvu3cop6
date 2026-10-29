@@ -1,0 +1,14 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content'
+import Layout from '@/layouts/Layout.astro'
+import { siteSettings } from '@/data/site'
+import PostDetail from '@/components/PostDetail.astro'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts')
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }))
+}
+const { post } = Astro.props as { post: CollectionEntry<'posts'> }
+---
+
+<Layout title={`${post.data.title} | ${siteSettings.brandName}`} description={post.data.description}><PostDetail post={post} /></Layout>

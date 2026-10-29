@@ -1,0 +1,119 @@
+---
+import { ArrowRight, CircleCheck, Lock, Send, ShieldCheck, Zap } from '@lucide/astro'
+import type { Service } from '@/data/site'
+import { siteSettings } from '@/data/site'
+
+interface Props { services: Service[]; title?: string; dark?: boolean; hideHeading?: boolean }
+const { services, title = 'Ücretsiz Proje Teklifi Alın', hideHeading = false } = Astro.props
+---
+
+<div class="relative w-full border border-neutral-300 bg-white p-6 sm:p-10 shadow-lg text-neutral-950">
+  <!-- Top Accent Bar -->
+  <div class="absolute inset-x-0 top-0 h-1.5 bg-primary"></div>
+
+  <form class="grid w-full gap-5" data-project-form data-whatsapp={siteSettings.whatsapp}>
+    {!hideHeading && (
+      <div class="grid gap-1.5 pb-4 border-b border-neutral-200">
+        <span class="text-[11px] font-black uppercase tracking-[.18em] text-primary">TSE Başvuru & Fiyatlandırma</span>
+        <h2 class="text-2xl font-black uppercase tracking-tight text-neutral-950">{title}</h2>
+        <p class="text-xs text-neutral-600 leading-relaxed">Araç ve yapılacak tadilat detaylarını iletin, TSE onay adımlarını ve mühendislik bedelini hemen çıkaralım.</p>
+      </div>
+    )}
+
+    <div class="grid gap-4 sm:grid-cols-2">
+      <label class="grid gap-1.5 text-[11px] font-black uppercase tracking-wider text-neutral-800">
+        Ad Soyad *
+        <input class="w-full border border-neutral-300 bg-neutral-50/50 px-4 py-3 text-sm font-semibold text-neutral-900 placeholder:text-neutral-400 placeholder:font-normal outline-none transition focus:border-primary focus:bg-white focus:ring-1 focus:ring-primary" required name="fullName" autocomplete="name" placeholder="Adınız Soyadınız" />
+      </label>
+
+      <label class="grid gap-1.5 text-[11px] font-black uppercase tracking-wider text-neutral-800">
+        Telefon *
+        <input class="w-full border border-neutral-300 bg-neutral-50/50 px-4 py-3 text-sm font-semibold text-neutral-900 placeholder:text-neutral-400 placeholder:font-normal outline-none transition focus:border-primary focus:bg-white focus:ring-1 focus:ring-primary" required name="phone" autocomplete="tel" inputmode="tel" placeholder="05XX XXX XX XX" />
+      </label>
+
+      <label class="grid gap-1.5 text-[11px] font-black uppercase tracking-wider text-neutral-800">
+        Bulunduğunuz Şehir
+        <input class="w-full border border-neutral-300 bg-neutral-50/50 px-4 py-3 text-sm font-semibold text-neutral-900 placeholder:text-neutral-400 placeholder:font-normal outline-none transition focus:border-primary focus:bg-white focus:ring-1 focus:ring-primary" name="city" placeholder="Örn: İstanbul, Ankara, İzmir..." />
+      </label>
+
+      <label class="grid gap-1.5 text-[11px] font-black uppercase tracking-wider text-neutral-800">
+        Araç Türü
+        <select class="w-full border border-neutral-300 bg-neutral-50/50 px-4 py-3 text-sm font-semibold text-neutral-900 outline-none transition focus:border-primary focus:bg-white focus:ring-1 focus:ring-primary" name="vehicleType">
+          <option value="Otomobil / Binek">Otomobil / Binek Araç</option>
+          <option value="Kurye Motosikleti">Kurye Motosikleti (Paket Servis)</option>
+          <option value="Bireysel Motosiklet (Topcase)">Bireysel Motosiklet (Topcase)</option>
+          <option value="Panelvan / Minibüs (Karavan)">Panelvan / Minibüs (Karavan)</option>
+          <option value="Kamyonet / Pickup">Kamyonet / Pickup</option>
+          <option value="Diğer Ticari Araç">Diğer Ticari Araç</option>
+        </select>
+      </label>
+
+      <label class="grid gap-1.5 text-[11px] font-black uppercase tracking-wider text-neutral-800 sm:col-span-2">
+        İhtiyaç Duyduğunuz Hizmet
+        <select class="w-full border border-neutral-300 bg-neutral-50/50 px-4 py-3 text-sm font-semibold text-neutral-900 outline-none transition focus:border-primary focus:bg-white focus:ring-1 focus:ring-primary" name="service">
+          <option value="">Lütfen Hizmet Seçin</option>
+          {services.map((service) => (
+            <option value={service.shortTitle}>{service.shortTitle}</option>
+          ))}
+        </select>
+      </label>
+
+      <label class="grid gap-1.5 text-[11px] font-black uppercase tracking-wider text-neutral-800 sm:col-span-2">
+        Araç Marka/Model ve Proje Detayı
+        <textarea class="min-h-24 w-full resize-y border border-neutral-300 bg-neutral-50/50 px-4 py-3 text-sm font-semibold text-neutral-900 placeholder:text-neutral-400 placeholder:font-normal outline-none transition focus:border-primary focus:bg-white focus:ring-1 focus:ring-primary" name="details" rows="3" placeholder="Örn: 2022 Honda PCX çanta işletme veya Ford Transit karavan dönüşüm projesi..."></textarea>
+      </label>
+    </div>
+
+    <label class="flex items-start gap-2.5 text-xs leading-relaxed text-neutral-600 cursor-pointer select-none">
+      <input class="mt-0.5 size-4 rounded-none accent-primary" required type="checkbox" name="consent" />
+      <span>Proje değerlendirmesi ve teklif hazırlığı amacıyla bilgilerimin kullanılmasını onaylıyorum.</span>
+    </label>
+
+    <button class="group inline-flex min-h-13 w-full items-center justify-center gap-3 bg-neutral-950 hover:bg-primary text-white font-black uppercase text-xs sm:text-sm tracking-wider px-8 py-4 transition-all duration-300 shadow-md hover:shadow-primary/30" type="submit">
+      <span>WHATSAPP İLE ANINDA TEKLİF AL</span>
+      <ArrowRight class="size-4 group-hover:translate-x-1 transition-transform" />
+    </button>
+
+    <!-- Trust & Speed Badges -->
+    <div class="flex flex-wrap items-center justify-between gap-3 border-t border-neutral-200 pt-4 text-[11px] font-bold text-neutral-500">
+      <span class="inline-flex items-center gap-1.5">
+        <Lock class="size-3.5 text-emerald-600" />
+        Bilgileriniz %100 Güvende
+      </span>
+      <span class="inline-flex items-center gap-1.5 text-primary">
+        <Zap class="size-3.5" />
+        Ortalama Yanıt: 5-10 Dk
+      </span>
+    </div>
+
+    <p class="flex items-center gap-2 border border-emerald-300 bg-emerald-50 p-3 text-xs font-bold text-emerald-800" data-form-status hidden>
+      <CircleCheck size={18} class="text-emerald-600 shrink-0" />
+      <span>Bilgileriniz derlendi, doğrudan WhatsApp teklif sohbeti açılıyor...</span>
+    </p>
+  </form>
+</div>
+
+<script>
+  document.querySelectorAll('[data-project-form]').forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault()
+      const data = new FormData(form as HTMLFormElement)
+      const message = [
+        '📋 *Yeni Site - Proje Teklif Talebi*',
+        '---------------------------------------',
+        `👤 *Ad Soyad:* ${data.get('fullName') || '-'}`,
+        `📞 *Telefon:* ${data.get('phone') || '-'}`,
+        `📍 *Şehir:* ${data.get('city') || '-'}`,
+        `🚗 *Araç Türü:* ${data.get('vehicleType') || '-'}`,
+        `📐 *İstenen Proje:* ${data.get('service') || '-'}`,
+        `📝 *Açıklama/Detay:* ${data.get('details') || '-'}`,
+        '---------------------------------------',
+        'TSE onay süreci ve net fiyat teklifi almak istiyorum.',
+      ].join('\n')
+      const number = form.getAttribute('data-whatsapp')
+      const status = form.querySelector('[data-form-status]')
+      if (status) status.removeAttribute('hidden')
+      window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer')
+    })
+  })
+</script>

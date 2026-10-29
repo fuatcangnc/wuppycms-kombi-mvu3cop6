@@ -1,0 +1,12 @@
+{
+	"version": 1,
+	"sites": [
+		{
+			"key": "root",
+			"name": "Yeni Site",
+			"media": "public",
+			"publishing": "review",
+			"collections": ["posts", "pages"]
+		}
+	]
+}

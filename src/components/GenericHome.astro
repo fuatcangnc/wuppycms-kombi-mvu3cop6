@@ -1,0 +1,301 @@
+---
+// Sektörden bağımsız ana sayfa — içeriğin tamamı `src/data/content.json`,
+// `src/data/site-settings.json` ve `src/data/services.json` dosyalarından gelir.
+// Karakas tasarım dilini korur (endüstriyel, köşeli, turuncu vurgu) ama araç
+// projelerine özgü bölümleri göstermez.
+import { ArrowRight, Check, CircleCheck, Phone } from '@lucide/astro'
+import Layout from '@/layouts/Layout.astro'
+import SiteImage from '@/components/SiteImage.astro'
+import content from '@/data/content.json'
+import { defaultServices, phoneHref, siteSettings, whatsappHref } from '@/data/site'
+
+const hero = {
+  eyebrow: content.heroEyebrow || siteSettings.heroEyebrow,
+  title: content.heroTitle || siteSettings.heroTitle,
+  description: content.heroDescription || siteSettings.heroDescription,
+}
+const highlights = (content.highlights ?? []).slice(0, 4)
+const metrics = (content.metrics ?? []).slice(0, 3)
+const services = [...defaultServices].sort((a, b) => a.order - b.order).slice(0, 9)
+const faq = (content.faq ?? []).slice(0, 5)
+const ctaLabel = content.ctaLabel || 'Teklif Al'
+
+const siteUrl = (Astro.site?.toString() ?? Astro.url.origin).replace(/\/$/, '')
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: siteUrl,
+      name: siteSettings.brandName,
+      description: hero.description,
+    },
+    {
+      '@type': 'LocalBusiness',
+      '@id': `${siteUrl}/#organization`,
+      name: siteSettings.brandName,
+      url: siteUrl,
+      telephone: siteSettings.phone,
+      email: siteSettings.email,
+      address: { '@type': 'PostalAddress', addressLocality: siteSettings.location, addressCountry: 'TR' },
+      openingHours: siteSettings.workHours,
+    },
+  ],
+}
+---
+
+<Layout title={`${siteSettings.brandName} | ${hero.title}`} description={hero.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <main class="home">
+    <!-- Hero -->
+    <section class="py-4 sm:py-6 lg:py-8 mb-8 sm:mb-12 lg:mb-16">
+      <div class="mx-auto w-[95vw]">
+        <div class="relative isolate overflow-hidden border border-neutral-300 bg-white px-6 py-12 text-black shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] sm:px-12 sm:py-16 lg:px-16 lg:py-20">
+          <div class="absolute inset-0 -z-10 bg-[radial-gradient(#e5e5e5_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-70" aria-hidden="true"></div>
+          <div class="absolute -right-20 -top-20 -z-10 size-96 rounded-full bg-primary/5 blur-3xl" aria-hidden="true"></div>
+
+          <div class="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-14">
+            <div class="w-full">
+              <div class="inline-flex items-center gap-2.5 border border-neutral-300 bg-neutral-100 px-3.5 py-1.5 text-[11px] font-black uppercase tracking-[0.14em] text-black sm:text-xs">
+                <span class="size-2 animate-pulse rounded-full bg-primary"></span>
+                <span>{hero.eyebrow}</span>
+              </div>
+
+              <h1 class="mt-5 text-2xl font-black uppercase leading-[1.1] tracking-[-0.03em] text-black sm:text-3xl md:text-4xl lg:text-[38px]">
+                {hero.title}
+              </h1>
+
+              <p class="mt-4 max-w-2xl text-base font-medium leading-relaxed text-neutral-800 sm:text-lg">
+                {hero.description}
+              </p>
+
+              {highlights.length > 0 && (
+                <div class="mt-5 flex flex-wrap items-center gap-2.5 text-xs font-bold text-black">
+                  {highlights.map((item) => (
+                    <span class="inline-flex items-center gap-1.5 border border-neutral-300 bg-neutral-50 px-3.5 py-2 shadow-2xs">
+                      <CircleCheck size={14} class="text-primary" /> {item}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              {metrics.length > 0 && (
+                <div class="mt-7 grid max-w-xl grid-cols-3 gap-6 border-y border-neutral-200 py-5">
+                  {metrics.map((metric, index) => (
+                    <div class={index === 0 ? '' : 'border-l border-neutral-200 pl-6'}>
+                      <strong class={`block text-2xl font-black tracking-tight sm:text-3xl ${index === metrics.length - 1 ? 'text-primary' : 'text-black'}`}>
+                        {metric.value}
+                      </strong>
+                      <span class="text-[11px] font-bold uppercase tracking-wider text-neutral-600 sm:text-xs">
+                        {metric.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <div class="mt-7 flex flex-wrap items-center gap-4">
+                <a
+                  href={whatsappHref(`${siteSettings.brandName} hizmetleri için bilgi almak istiyorum.`)}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="group inline-flex items-center justify-center gap-3 bg-primary px-8 py-4 text-xs font-black uppercase tracking-wider text-white shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-[1.02] hover:bg-black sm:text-[13px]"
+                >
+                  <span>{ctaLabel}</span>
+                  <ArrowRight size={16} class="transition-transform group-hover:translate-x-1" />
+                </a>
+                <a
+                  href={phoneHref}
+                  class="group inline-flex items-center justify-center gap-3 border-2 border-black bg-white px-8 py-4 text-xs font-black uppercase tracking-wider text-black transition-all duration-300 hover:bg-black hover:text-white sm:text-[13px]"
+                >
+                  <Phone size={16} />
+                  <span>{siteSettings.phone}</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: service index card -->
+            <div class="relative hidden lg:block">
+              <div class="border border-neutral-300 bg-white shadow-xl">
+                <div class="flex items-center justify-between border-b border-neutral-200 bg-neutral-50 px-5 py-3">
+                  <span class="text-[11px] font-black uppercase tracking-[0.16em] text-neutral-900">Hizmetler</span>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-neutral-500">
+                    {services.length} başlık
+                  </span>
+                </div>
+                <ol class="divide-y divide-neutral-200">
+                  {services.slice(0, 5).map((service, index) => (
+                    <li>
+                      <a href={`/${service.slug}`} class="group flex items-center gap-3 px-5 py-3 transition-colors hover:bg-neutral-50">
+                        <span class="grid size-7 shrink-0 place-items-center bg-neutral-950 text-[11px] font-black text-white">
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                        <span class="min-w-0 flex-1 truncate text-[13px] font-bold text-neutral-900 group-hover:text-primary">
+                          {service.shortTitle}
+                        </span>
+                        <ArrowRight size={14} class="shrink-0 text-neutral-400 transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+                <div class="flex items-center justify-between border-t border-neutral-200 bg-neutral-50 px-5 py-3 text-[11px] font-bold text-neutral-600">
+                  <span>{siteSettings.workHours}</span>
+                  <span class="uppercase tracking-wider">{siteSettings.location}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="border-y border-neutral-200 bg-white py-20 lg:py-28" id="hizmetler">
+      <div class="shell">
+        <div class="max-w-3xl" data-reveal>
+          <div class="inline-block -skew-x-12 bg-neutral-950 px-5 py-1.5">
+            <span class="inline-block skew-x-12 text-xs font-black uppercase tracking-[0.2em] text-white">Hizmetlerimiz</span>
+          </div>
+          <h2 class="mt-5 text-3xl font-black uppercase leading-tight tracking-tight text-neutral-950 sm:text-4xl lg:text-5xl">
+            {siteSettings.brandName} <span class="text-primary">neler yapıyor?</span>
+          </h2>
+          <p class="mt-4 max-w-2xl text-sm leading-relaxed text-neutral-600 sm:text-base">
+            {content.aboutText || hero.description}
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <article class="group flex h-full flex-col border border-neutral-200 bg-white transition duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-[0_16px_35px_rgba(16,35,50,.1)]" data-reveal>
+              <div class="relative flex h-40 items-center justify-center overflow-hidden bg-neutral-950">
+                <div class="absolute inset-0 bg-[radial-gradient(#3f3f46_1px,transparent_1px)] [background-size:16px_16px] opacity-60" aria-hidden="true"></div>
+                <span class="relative text-4xl font-black tracking-tighter text-white/15">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <span class="absolute left-4 top-4 bg-primary px-2.5 py-1 text-[11px] font-black uppercase tracking-wider text-white">
+                  {service.category}
+                </span>
+              </div>
+              <div class="flex flex-1 flex-col p-5">
+                <h3 class="text-[17px] font-black uppercase leading-tight tracking-tight text-neutral-950">
+                  <a href={`/${service.slug}`} class="transition-colors hover:text-primary">{service.shortTitle}</a>
+                </h3>
+                <p class="mt-2 line-clamp-3 min-h-[3.6rem] text-[13px] leading-relaxed text-neutral-600">
+                  {service.summary}
+                </p>
+                <a href={`/${service.slug}`} class="mt-auto inline-flex items-center gap-1.5 border-t border-neutral-200 pt-4 text-[11px] font-black uppercase tracking-wider text-primary transition-colors hover:text-black">
+                  Hizmeti incele <ArrowRight size={14} />
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- About / why us -->
+    <section class="bg-[#0d0f10] py-20 text-white lg:py-24" id="hakkimizda">
+      <div class="shell grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:gap-16">
+        <div data-reveal>
+          <h3 class="w-fit -skew-x-12 bg-primary px-6 py-2 text-xs font-black uppercase tracking-[0.16em] text-white">
+            <span class="block skew-x-12">Hakkımızda</span>
+          </h3>
+          <h2 class="mt-6 text-3xl font-black uppercase leading-[1.05] tracking-tight sm:text-4xl lg:text-5xl">
+            {content.aboutTitle || siteSettings.brandName}
+          </h2>
+          <p class="mt-5 max-w-xl text-base leading-7 text-white/70">
+            {content.aboutText || hero.description}
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href={whatsappHref(`${siteSettings.brandName} hizmetleri hakkında bilgi almak istiyorum.`)} target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 bg-primary px-6 py-3 text-xs font-black uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-neutral-950">
+              WhatsApp <ArrowRight size={14} />
+            </a>
+            <a href={phoneHref} class="inline-flex items-center gap-2 border border-white/25 px-6 py-3 text-xs font-black uppercase tracking-wider text-white transition-colors hover:border-primary hover:text-primary">
+              <Phone size={14} /> {siteSettings.phone}
+            </a>
+          </div>
+        </div>
+
+        <dl class="grid gap-4 sm:grid-cols-2" data-reveal>
+          <div class="border border-white/15 bg-white/5 p-5">
+            <dt class="text-[11px] font-black uppercase tracking-[0.16em] text-primary">Çalışma saatleri</dt>
+            <dd class="mt-2 text-sm font-semibold text-white/90">{siteSettings.workHours}</dd>
+          </div>
+          <div class="border border-white/15 bg-white/5 p-5">
+            <dt class="text-[11px] font-black uppercase tracking-[0.16em] text-primary">Konum</dt>
+            <dd class="mt-2 text-sm font-semibold text-white/90">{siteSettings.location}</dd>
+          </div>
+          <div class="border border-white/15 bg-white/5 p-5">
+            <dt class="text-[11px] font-black uppercase tracking-[0.16em] text-primary">Telefon</dt>
+            <dd class="mt-2 text-sm font-semibold text-white/90">
+              <a href={phoneHref} class="hover:text-primary">{siteSettings.phone}</a>
+            </dd>
+          </div>
+          <div class="border border-white/15 bg-white/5 p-5">
+            <dt class="text-[11px] font-black uppercase tracking-[0.16em] text-primary">E-posta</dt>
+            <dd class="mt-2 text-sm font-semibold text-white/90">
+              <a href={`mailto:${siteSettings.email}`} class="break-all hover:text-primary">{siteSettings.email}</a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    {faq.length > 0 && (
+      <section class="bg-white py-20 md:py-24" id="sik-sorulan-sorular">
+        <div class="shell">
+          <div class="grid items-end gap-5 md:grid-cols-[10rem_1fr]">
+            <h3 class="w-fit -skew-x-12 bg-primary px-7 py-3 text-xs font-black uppercase italic tracking-[.12em] text-white">
+              <span class="block skew-x-12">SSS</span>
+            </h3>
+            <div>
+              <h2 class="text-3xl font-black uppercase leading-none tracking-[-.03em] text-slate-950 md:text-5xl">
+                Sık sorulan sorular
+              </h2>
+              <p class="mt-4 text-sm leading-7 text-black/70">Hizmetlerimiz ve süreç hakkında merak edilenler.</p>
+            </div>
+          </div>
+
+          <div class="mt-12 grid gap-3">
+            {faq.map((item) => (
+              <details class="group border border-neutral-200 bg-white px-5 py-4 open:border-primary/50">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-bold text-neutral-950">
+                  {item.question}
+                  <span class="text-primary transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p class="mt-3 max-w-3xl text-sm leading-relaxed text-neutral-600">{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- CTA -->
+    <section class="border-t border-neutral-200 bg-neutral-950 py-16 text-white">
+      <div class="shell flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+        <div>
+          <h2 class="text-2xl font-black uppercase tracking-tight sm:text-3xl">
+            {siteSettings.brandName} ile <span class="text-primary">hemen başlayın</span>
+          </h2>
+          <p class="mt-2 text-sm text-white/70">
+            <Check class="mr-1 inline size-4 text-primary" />
+            {siteSettings.workHours} · {siteSettings.location}
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href={whatsappHref(`${siteSettings.brandName} için teklif almak istiyorum.`)} target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 bg-primary px-7 py-3.5 text-xs font-black uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-neutral-950">
+            {ctaLabel} <ArrowRight size={14} />
+          </a>
+          <a href={phoneHref} class="inline-flex items-center gap-2 border border-white/25 px-7 py-3.5 text-xs font-black uppercase tracking-wider text-white transition-colors hover:border-primary hover:text-primary">
+            <Phone size={14} /> Ara
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,68 @@
+---
+// Hizmet merkezi — sektörden bağımsız. Kategoriler hizmet listesinden türetilir.
+import { ArrowRight, CircleCheck, Phone } from '@lucide/astro'
+import Layout from '@/layouts/Layout.astro'
+import SiteImage from '@/components/SiteImage.astro'
+import content from '@/data/content.json'
+import { defaultServices, phoneHref, serviceCategories, siteSettings, whatsappHref } from '@/data/site'
+
+const groups = serviceCategories
+  .map((category) => ({
+    category,
+    services: defaultServices.filter((service) => service.category === category).sort((a, b) => a.order - b.order),
+  }))
+  .filter((group) => group.services.length > 0)
+const total = defaultServices.length
+---
+
+<Layout
+  title={`Hizmetlerimiz | ${siteSettings.brandName}`}
+  description={`${siteSettings.brandName} hizmetleri: ${defaultServices.slice(0, 4).map((s) => s.shortTitle).join(', ')}.`}
+>
+  <main>
+    <section class="border-b border-neutral-200 bg-white py-14 lg:py-20">
+      <div class="shell">
+        <div class="inline-block -skew-x-12 bg-neutral-950 px-5 py-1.5">
+          <span class="inline-block skew-x-12 text-xs font-black uppercase tracking-[0.2em] text-white">Hizmetlerimiz</span>
+        </div>
+        <h1 class="mt-5 max-w-3xl text-3xl font-black uppercase leading-tight tracking-tight text-neutral-950 sm:text-4xl lg:text-5xl">
+          {siteSettings.brandName} <span class="text-primary">{total} hizmet</span>
+        </h1>
+        <p class="mt-4 max-w-2xl text-sm leading-relaxed text-neutral-600 sm:text-base">
+          {content.aboutText || siteSettings.heroDescription}
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href={whatsappHref(`${siteSettings.brandName} hizmetleri için bilgi almak istiyorum.`)} target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 bg-primary px-6 py-3 text-xs font-black uppercase tracking-wider text-white transition-colors hover:bg-black">
+            WhatsApp <ArrowRight size={14} />
+          </a>
+          <a href={phoneHref} class="inline-flex items-center gap-2 border-2 border-black px-6 py-3 text-xs font-black uppercase tracking-wider text-black transition-colors hover:bg-black hover:text-white">
+            <Phone size={14} /> {siteSettings.phone}
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {groups.map((group) => (
+      <section class="border-b border-neutral-200 bg-white py-14">
+        <div class="shell">
+          <div class="flex items-end justify-between gap-4">
+            <h2 class="text-xl font-black uppercase tracking-tight text-neutral-950 sm:text-2xl">{group.category}</h2>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-neutral-500">{group.services.length} hizmet</span>
+          </div>
+          <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {group.services.map((service) => (
+              <a href={`/${service.slug}`} class="group flex flex-col border border-neutral-200 bg-white p-5 transition hover:-translate-y-0.5 hover:border-primary hover:shadow-lg">
+                <span class="text-[10px] font-black uppercase tracking-[0.16em] text-primary">{service.category}</span>
+                <h3 class="mt-2 text-base font-black uppercase leading-tight text-neutral-950 group-hover:text-primary">{service.shortTitle}</h3>
+                <p class="mt-2 line-clamp-3 text-[13px] leading-relaxed text-neutral-600">{service.summary}</p>
+                <span class="mt-auto inline-flex items-center gap-1.5 pt-4 text-[11px] font-black uppercase tracking-wider text-primary">
+                  Detay <ArrowRight size={13} />
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    ))}
+  </main>
+</Layout>

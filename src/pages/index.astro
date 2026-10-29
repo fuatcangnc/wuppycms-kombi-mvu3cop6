@@ -1,0 +1,12 @@
+---
+// Ana sayfa: içerik `src/data/content.json` içindeki `automotive` alanına göre
+// iki düzenden birini çizer. Araç işletmeleri Karakas'a özgü yoğun sayfayı,
+// diğer sektörler tamamen içerik odaklı genel düzeni alır.
+import AutomotiveHome from '@/components/AutomotiveHome.astro'
+import GenericHome from '@/components/GenericHome.astro'
+import content from '@/data/content.json'
+
+const automotive = content.automotive === true
+---
+
+{automotive ? <AutomotiveHome /> : <GenericHome />}

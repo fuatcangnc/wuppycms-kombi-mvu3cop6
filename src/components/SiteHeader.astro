@@ -1,0 +1,252 @@
+---
+import { ArrowRight, ChevronDown, ChevronRight, Mail, Menu, Phone, Search, X } from '@lucide/astro'
+import Brand from './Brand.astro'
+import { defaultServices, serviceCategories, siteSettings, phoneHref, whatsappHref, courierCompanies } from '@/data/site'
+import content from '@/data/content.json'
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from '@/ui/navigation-menu'
+
+const automotive = content.automotive === true
+
+// Menü içerikten türetilir: araç işletmelerinde kurye/marka bölümleri,
+// diğer sektörlerde sade bir menü (Hizmetler · Kurumsal · Blog · İletişim).
+const navItems = automotive
+  ? [
+      { label: 'Ana Sayfa', href: '/' },
+      {
+        label: 'KVKK',
+        href: '/gizlilik-ve-kvkk-politikasi',
+        children: [
+          ['Gizlilik ve KVKK Politikası', '/gizlilik-ve-kvkk-politikasi'],
+          ['İlgili Kişi Başvurusu', '/ilgili-kisi-basvurusu'],
+          ['Çerez Politikası', '/cerez-politikasi'],
+          ['Web Sitesi Ziyaretçi Aydınlatma Metni', '/web-sitesi-ziyaretci-aydinlatma-metni'],
+        ],
+      },
+      {
+        label: 'Kurumsal',
+        href: '/hakkimizda',
+        children: [
+          ['Hakkımızda', '/hakkimizda'],
+          ['Markalarımız', '/markalarimiz'],
+          ['Belgelerimiz', '/belgelerimiz'],
+          ['Kalite Politikası', '/kalite-politikasi'],
+        ],
+      },
+      { label: 'Hizmetlerimiz', href: '/hizmetler', variant: 'services' },
+      { label: 'Kurye Firmaları', href: '/kurye-firmalari', variant: 'couriers' },
+      {
+        label: 'Markalar',
+        href: '/motosiklet-markalari',
+        children: [
+          ['Motosiklet Markaları', '/motosiklet-markalari'],
+          ['Araba Markaları', '/araba-markalari'],
+        ],
+      },
+      { label: 'Blog', href: '/blog' },
+      { label: 'İletişim', href: '/iletisim' },
+    ]
+  : [
+      { label: 'Ana Sayfa', href: '/' },
+      {
+        label: 'Kurumsal',
+        href: '/hakkimizda',
+        children: [
+          ['Hakkımızda', '/hakkimizda'],
+          ['Belgelerimiz', '/belgelerimiz'],
+          ['Gizlilik ve KVKK', '/gizlilik-ve-kvkk-politikasi'],
+          ['Çerez Politikası', '/cerez-politikasi'],
+        ],
+      },
+      { label: 'Hizmetlerimiz', href: '/hizmetler', variant: 'services' },
+      { label: 'Blog', href: '/blog' },
+      { label: 'İletişim', href: '/iletisim' },
+    ]
+
+const featuredCourierNames = ['Getir', 'Yemek Sepeti', 'Trendyol', 'Trendyol Go', 'Tıkla Gelsin', 'Vigo', 'Uber Eats', 'Migros Kurye', "Domino's", 'Paket Taxi', 'Jetbee', 'Moto Kurye']
+const headerCouriers = featuredCourierNames.map((name) => {
+  const found = courierCompanies.find((c) => c.name.toLowerCase() === name.toLowerCase())
+  return found || { name, slug: 'kurye-firmalari' }
+})
+
+const serviceGroups = serviceCategories.map((category) => ({
+  category,
+  services: defaultServices.filter((service) => service.category === category).sort((a, b) => a.order - b.order),
+}))
+
+// Tek seviyeli hizmet menüsü: her kategori bir başlık, altında hizmetler.
+const serviceHubs = automotive
+  ? [
+      { label: 'Araç Proje Hizmetleri', href: '/hizmetler', categories: serviceCategories.slice(0, 5) },
+      { label: 'Tadilat ve Dönüşüm', href: '/hizmetler', categories: serviceCategories.slice(5) },
+    ]
+  : [{ label: `${siteSettings.brandName} Hizmetleri`, href: '/hizmetler', categories: [...serviceCategories] }]
+const hubHrefs = serviceHubs.map((h) => h.href)
+
+const topbarText = automotive
+  ? 'Araç projelerinde güvenilir mühendislik ve uygulama desteği.'
+  : `${siteSettings.brandName} · ${siteSettings.location} · ${siteSettings.workHours}`
+
+const isActive = (href: string) => Astro.url.pathname === href || (href !== '/' && Astro.url.pathname.startsWith(`${href}/`))
+---
+
+<header id="site-header" class="sticky top-0 z-50 bg-white group-data-[sticky=true]/header:bg-transparent transition-all duration-300 group/header">
+  <div class="hidden lg:block bg-[#111111] text-white border-b border-white/10 group-data-[sticky=true]/header:hidden transition-all duration-200">
+    <div class="mx-auto flex min-h-9 w-[95vw] items-center justify-between text-xs px-2">
+      <span class="text-white/70 font-medium">{topbarText}</span>
+      <div class="flex items-stretch h-9">
+        <a href={phoneHref} class="inline-flex items-center gap-2 border-l border-white/10 px-4 font-bold text-white/90 hover:text-primary transition-colors text-[11px]"><Phone size={13} /> {siteSettings.phone}</a>
+        <a href={`mailto:${siteSettings.email}`} class="inline-flex items-center gap-2 border-l border-white/10 px-4 font-bold text-white/90 hover:text-primary transition-colors text-[11px]"><Mail size={13} /> {siteSettings.email}</a>
+        <span class="inline-flex items-center gap-1.5 border-l border-white/10 px-4 font-bold text-white/90 text-[11px]">TR <ChevronDown size={12} /></span>
+      </div>
+    </div>
+  </div>
+  <div class="py-2.5 transition-all duration-300">
+    <div class="nav-shell mx-auto flex min-h-[4.5rem] w-[95vw] items-center justify-between bg-white px-5 shadow-[0_8px_25px_rgba(0,0,0,0.06)] border border-neutral-200/80 transition-all duration-300 group-data-[sticky=true]/header:bg-[#111111]/95 group-data-[sticky=true]/header:backdrop-blur-md group-data-[sticky=true]/header:border-white/12 group-data-[sticky=true]/header:shadow-2xl">
+      <div class="mobile-logo lg:hidden"><Brand /></div>
+      <div class="hidden shrink-0 lg:block"><Brand /></div>
+      <NavigationMenu class="hidden lg:flex" aria-label="Ana menü" openOnFocus>
+        <NavigationMenuList class="gap-1">
+          {navItems.map((item) => (
+            <NavigationMenuItem value={item.label.toLowerCase()}>
+               {item.variant === 'services' ? (
+                <>
+                  <NavigationMenuTrigger class={hubHrefs.some((h) => isActive(h)) ? '!border-primary !text-primary !font-black' : ''}>
+                    <span>{item.label}</span>
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent align="center" class="w-80 bg-white shadow-2xl border border-neutral-200">
+                    <div class="grid gap-1 p-2">
+                      <span class="px-3 pb-1 pt-2 text-xs font-black uppercase tracking-[.18em] text-primary">{siteSettings.brandName}</span>
+                      {serviceHubs.map((hub) => (
+                        <div class="group/sub relative">
+                          <NavigationMenuLink href={hub.href} class="flex items-center justify-between rounded-sm px-3 py-2.5 text-sm font-black text-black transition-colors hover:bg-primary hover:!text-white">
+                            <span class="flex items-center gap-2">{hub.label} <ChevronRight size={15} /></span>
+                          </NavigationMenuLink>
+                          <div class="js-flyout invisible absolute left-full top-[-1rem] z-10 w-72 max-h-[400px] overflow-y-auto bg-white opacity-0 shadow-2xl border border-neutral-200 transition-opacity duration-200 group-hover/sub:visible group-hover/sub:opacity-100 group-focus-within/sub:visible group-focus-within/sub:opacity-100 p-2">
+                            {hub.categories.flatMap((category) => defaultServices.filter((service) => service.category === category).sort((a, b) => a.order - b.order)).map((service) => (
+                              <NavigationMenuLink href={`/${service.slug}`} class="block rounded-sm px-3 py-1.5 text-sm font-semibold text-neutral-900 hover:bg-primary hover:!text-white transition-colors">{service.shortTitle}</NavigationMenuLink>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </NavigationMenuContent>
+                </>
+              ) : item.variant === 'couriers' ? (
+                <>
+                  <NavigationMenuTrigger class={isActive(item.href) ? '!border-primary !text-primary !font-black' : ''}>
+                    <span>{item.label}</span>
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent align="center" class="w-[min(45rem,calc(100vw-2rem))] bg-white shadow-2xl border border-neutral-200 [content-visibility:auto]">
+                    <div class="p-4">
+                      <div class="flex items-end justify-between gap-4 border-b border-neutral-200 pb-4">
+                        <div>
+                          <span class="text-xs font-black uppercase tracking-[.18em] text-primary">Motosiklet çanta projesi</span>
+                          <h2 class="mt-2 text-xl font-black text-black">Kurye firmalarına özel ruhsata işletme</h2>
+                        </div>
+                        <NavigationMenuLink href={item.href} class="text-xs font-black uppercase text-primary hover:underline">
+                          Tümünü incele
+                        </NavigationMenuLink>
+                      </div>
+                      <div class="grid grid-cols-3 gap-x-6 gap-y-1 pt-3">
+                        {headerCouriers.map((courier) => (
+                          <NavigationMenuLink
+                            href={`/${courier.slug}`}
+                            class="border-b border-neutral-100 px-2 py-2 text-xs font-semibold text-neutral-900 hover:bg-primary hover:!text-white rounded-sm transition-colors"
+                          >
+                            {courier.name}
+                          </NavigationMenuLink>
+                        ))}
+                      </div>
+                    </div>
+                  </NavigationMenuContent>
+                </>
+              ) : item.children ? (
+                <>
+                  <NavigationMenuTrigger class={isActive(item.href) ? '!border-primary !text-primary !font-black' : ''}>
+                    <span>{item.label}</span>
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent class="w-72 sm:w-80 bg-white shadow-2xl border border-neutral-200 [content-visibility:auto]">
+                    <div class="grid gap-1 p-2">
+                      {item.children.map(([label, href]) => (
+                        <NavigationMenuLink
+                          href={href}
+                          class="block px-3 py-2 text-xs font-bold text-neutral-900 hover:bg-primary hover:!text-white rounded-sm transition-colors"
+                        >
+                          {label}
+                        </NavigationMenuLink>
+                      ))}
+                    </div>
+                  </NavigationMenuContent>
+                </>
+              ) : (
+                <NavigationMenuLink href={item.href} class={navigationMenuTriggerStyle({ class: `flex items-center ${isActive(item.href) ? '!border-primary !text-primary !font-black' : ''}` })}>
+                  <span>{item.label}</span>
+                </NavigationMenuLink>
+              )}
+            </NavigationMenuItem>
+          ))}
+        </NavigationMenuList>
+      </NavigationMenu>
+      <div class="ml-auto flex items-center gap-2 lg:ml-0">
+        <a class="inline-flex h-9 sm:h-10 items-center gap-1.5 sm:gap-2 bg-primary px-3 sm:px-3.5 text-[11px] sm:text-xs font-black uppercase tracking-wider text-white shadow-sm transition hover:bg-black" href="/iletisim#form">
+          <span class="grid size-4.5 sm:size-5 place-items-center bg-black text-white"><ArrowRight size={12} class="sm:hidden" /><ArrowRight size={13} class="hidden sm:block" /></span> <span>Teklif alın</span>
+        </a>
+        <a class="icon-button hidden lg:grid size-10 place-items-center border border-neutral-200 text-neutral-900 transition hover:border-primary hover:text-primary group-data-[sticky=true]/header:border-white/20 group-data-[sticky=true]/header:text-white" aria-label="Sitede ara" href="/search"><Search size={17} /></a>
+        <a class="icon-button hidden lg:grid size-10 place-items-center border border-neutral-200 text-neutral-900 transition hover:border-primary hover:text-primary group-data-[sticky=true]/header:border-white/20 group-data-[sticky=true]/header:text-white" aria-label="Hızlı iletişim" href="/iletisim"><Phone size={17} /></a>
+      </div>
+      <details class="relative lg:hidden group/mobile">
+        <summary aria-label="Menüyü aç" class="grid size-10 place-items-center cursor-pointer list-none text-neutral-900 group-data-[sticky=true]/header:text-white"><Menu class="group-open/mobile:hidden" size={23} /><X class="hidden group-open/mobile:block" size={23} /></summary>
+        <nav aria-label="Mobil menü" class="absolute right-0 top-full mt-2 w-[min(22rem,calc(100vw-2.5rem))] bg-white p-4 sm:p-5 shadow-2xl border border-neutral-200 z-50 text-neutral-900 [content-visibility:auto]">
+          <ul class="flex flex-col gap-0.5">
+            {navItems.map((item) => (
+              <li>
+                {item.children || item.variant === 'services' || item.variant === 'couriers' ? (
+                  <details class="border-b border-neutral-100 py-1">
+                    <summary class="flex items-center justify-between cursor-pointer py-2.5 sm:py-3 text-sm font-bold text-neutral-900 list-none"><span>{item.label}</span><ChevronDown size={17} /></summary>
+                    <ul class="pl-2 pt-1.5 pb-2 flex flex-col gap-1">
+                      {item.variant === 'services' ? (
+                        <>
+                          {serviceHubs.map((hub) => (
+                            <li>
+                              <details class="rounded-md">
+                                <summary class="flex items-center justify-between cursor-pointer px-3 py-2.5 text-xs font-bold text-neutral-900 list-none hover:bg-primary/10 rounded-md transition-colors"><span>{hub.label}</span><ChevronDown size={15} /></summary>
+                                <ul class="pl-2 pt-1 flex flex-col gap-0.5">
+                                  {hub.categories.flatMap((category) => defaultServices.filter((service) => service.category === category).sort((a, b) => a.order - b.order)).map((service) => (
+                                    <li><a class="block px-3 py-2.5 text-xs font-semibold text-neutral-900 hover:bg-primary hover:!text-white rounded-md transition-colors" href={`/${service.slug}`}>{service.shortTitle}</a></li>
+                                  ))}
+                                </ul>
+                              </details>
+                            </li>
+                          ))}
+                        </>
+                      ) : item.variant === 'couriers' ? (
+                        <>
+                          <li><a class="block px-3 py-2.5 text-xs font-black text-primary hover:bg-primary/10 rounded-md uppercase tracking-wider mb-1 transition-colors" href="/kurye-firmalari">Tüm Kurye Firmaları (27) →</a></li>
+                          {headerCouriers.slice(0, 6).map((courier) => (
+                            <li><a class="block px-3 py-2.5 text-xs font-semibold text-neutral-900 hover:bg-primary hover:!text-white rounded-md transition-colors" href={`/${courier.slug}`}>{courier.name}</a></li>
+                          ))}
+                        </>
+                      ) : item.children?.map(([label, href]) => (
+                        <li><a class="block px-3 py-2.5 text-xs font-semibold text-neutral-900 hover:bg-primary hover:!text-white rounded-md transition-colors" href={href}>{label}</a></li>
+                      ))}
+                    </ul>
+                  </details>
+                ) : <a class="flex items-center justify-between py-3 sm:py-3.5 border-b border-neutral-100 text-sm font-bold text-neutral-900 hover:text-primary transition-colors" href={item.href}><span>{item.label}</span><ArrowRight size={16} /></a>}
+              </li>
+            ))}
+          </ul>
+          <a class="mt-4 flex items-center justify-between bg-primary p-3.5 text-xs font-black uppercase text-white shadow-sm hover:bg-black transition-colors" href={whatsappHref()} target="_blank" rel="noreferrer">WhatsApp ile görüşün <ArrowRight size={16} /></a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+

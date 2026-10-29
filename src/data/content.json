@@ -1,0 +1,51 @@
+{
+  "industry": "mühendislik",
+  "automotive": true,
+  "heroEyebrow": "TSE 360 & TÜVTÜRK YETKİLİ ARAÇ PROJE OFİSİ",
+  "heroTitle": "Araç proje hizmetleri ve motosiklet çanta ruhsata işletme",
+  "heroDescription": "Yetkili makine mühendisliği kadromuzla araç projelerinizi ve motosiklet çanta tescillerinizi hızlı, eksiksiz ve mevzuata tam uyumlu biçimde yönetiyoruz.",
+  "highlights": [
+    "Araç Proje | TSE Onaylı",
+    "Motosiklet Çanta Ruhsata İşletme",
+    "TÜVTÜRK & Noter Tescil Desteği"
+  ],
+  "metrics": [
+    {
+      "value": "12+ Yıl",
+      "label": "Mühendislik Deneyimi"
+    },
+    {
+      "value": "1.000+",
+      "label": "Tescilli Proje"
+    },
+    {
+      "value": "%100",
+      "label": "Mevzuat Uyumu"
+    }
+  ],
+  "aboutTitle": "Araç projesi ve motosiklet çanta tescilinde iki ana uzmanlık",
+  "aboutText": "İhtiyacınız olan hizmet alanını seçin; mevzuata tam uygun teknik hesaplama, TSE 360 dijital dosya onayı ve noter tescil adımlarını sıfır hata güvencesiyle tamamlayalım.",
+  "categories": [
+    "Araç Projeleri",
+    "Dönüşüm",
+    "Söküm",
+    "Motosiklet",
+    "Belgelendirme"
+  ],
+  "services": [],
+  "faq": [
+    {
+      "question": "Motosiklet çanta ruhsata nasıl işletilir?",
+      "answer": "Motosiklete monte edilen arka çanta veya taşıma kutusu için yetkili makine mühendisimiz tarafından TSE onaylı tadilat projesi çizilir. Ardından TSE Araç Kontrol Merkezi incelemesi ve TÜVTÜRK tespit muayenesi yapılarak noterden yeni ruhsat teslim alınır."
+    },
+    {
+      "question": "Araç projesi hangi durumlarda zorunludur?",
+      "answer": "Karavan dönüşümü, motor değişimi, çeki demiri montajı, koltuk sökümü veya ilavesi, LPG sökümü ve engelli aparatı gibi aracın fabrika çıkış özelliklerini değiştiren tüm işlemlerde yasal olarak araç projesi zorunludur."
+    },
+    {
+      "question": "TSE onay ve ruhsat süreci ne kadar sürer?",
+      "answer": "Teknik evraklarınız ve montaj faturanız hazır olduğunda proje çizimi ve TSE 360 sistemine dosya yükleme işlemi aynı gün içinde tamamlanır. Randevu sonrasında muayene ve noter tesciliyle süreç hızla sonuçlandırılır."
+    }
+  ],
+  "ctaLabel": "Teklif Al"
+}
