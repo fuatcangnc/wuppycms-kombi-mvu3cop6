@@ -1,51 +1,104 @@
 {
-  "industry": "mühendislik",
-  "automotive": true,
-  "heroEyebrow": "TSE 360 & TÜVTÜRK YETKİLİ ARAÇ PROJE OFİSİ",
-  "heroTitle": "Araç proje hizmetleri ve motosiklet çanta ruhsata işletme",
-  "heroDescription": "Yetkili makine mühendisliği kadromuzla araç projelerinizi ve motosiklet çanta tescillerinizi hızlı, eksiksiz ve mevzuata tam uyumlu biçimde yönetiyoruz.",
+  "industry": "kombi",
+  "automotive": false,
+  "heroEyebrow": "İSTANBUL 7/24 KOMBİ SERVİSİ",
+  "heroTitle": "Kombi arızası mı var? Aynı gün çözülür.",
+  "heroDescription": "Kombi arıza, bakım, montaj ve petek temizliği hizmetlerinde İstanbul’da aynı gün servis veriyoruz. Arıza durumlarında sabit fiyat, sürpriz yok.",
   "highlights": [
-    "Araç Proje | TSE Onaylı",
-    "Motosiklet Çanta Ruhsata İşletme",
-    "TÜVTÜRK & Noter Tescil Desteği"
+    "Aynı Gün Servis",
+    "Sabit Fiyat",
+    "7/24 Acil Destek"
   ],
   "metrics": [
     {
-      "value": "12+ Yıl",
-      "label": "Mühendislik Deneyimi"
+      "value": "7/24",
+      "label": "Acil Servis"
     },
     {
-      "value": "1.000+",
-      "label": "Tescilli Proje"
+      "value": "Aynı Gün",
+      "label": "Arıza Çözümü"
     },
     {
-      "value": "%100",
-      "label": "Mevzuat Uyumu"
+      "value": "Sabit",
+      "label": "Fiyat Politikası"
     }
   ],
-  "aboutTitle": "Araç projesi ve motosiklet çanta tescilinde iki ana uzmanlık",
-  "aboutText": "İhtiyacınız olan hizmet alanını seçin; mevzuata tam uygun teknik hesaplama, TSE 360 dijital dosya onayı ve noter tescil adımlarını sıfır hata güvencesiyle tamamlayalım.",
+  "aboutTitle": "Kombi işini bilen ekip",
+  "aboutText": "Kombici Abi, İstanbul’da kombi arıza, bakım, montaj ve petek temizliği işlerini hızlı, temiz ve net çözen bir ekiptir. Arızayı yerinde tespit eder, yapılacak işlemi baştan söyleriz; onayınız olmadan sürpriz maliyet çıkarmayız.",
   "categories": [
-    "Araç Projeleri",
-    "Dönüşüm",
-    "Söküm",
-    "Motosiklet",
-    "Belgelendirme"
+    "Arıza",
+    "Bakım",
+    "Montaj",
+    "Petek & Tesisat"
   ],
-  "services": [],
+  "services": [
+    {
+      "title": "Kombi Arıza Tespiti",
+      "shortTitle": "Arıza Tespiti",
+      "slug": "kombi-ariza-tespiti",
+      "summary": "Kombiniz yanmıyor, su ısıtmıyor ya da hata veriyorsa arızayı hızlıca tespit edip çözüm planını net şekilde sunuyoruz.",
+      "category": "Arıza"
+    },
+    {
+      "title": "Acil Kombi Servisi",
+      "shortTitle": "Acil Servis",
+      "slug": "acil-kombi-servisi",
+      "summary": "Gece veya gündüz gelen kombi arızalarında İstanbul’da hızlı müdahale sağlayarak ısınma ve sıcak su mağduriyetini çözüyoruz.",
+      "category": "Arıza"
+    },
+    {
+      "title": "Kombi Bakımı",
+      "shortTitle": "Kombi Bakımı",
+      "slug": "kombi-bakimi",
+      "summary": "Güvenli kullanım ve verimli çalışma için kombinizin iç temizliği, gaz ayarı ve genel kontrollerini yapıyoruz.",
+      "category": "Bakım"
+    },
+    {
+      "title": "Petek Temizliği",
+      "shortTitle": "Petek Temizliği",
+      "slug": "petek-temizligi",
+      "summary": "Peteklerin altı ısınmıyor veya kombi zorlanıyorsa tesisat içindeki kiri temizleyerek ısınma performansını artırıyoruz.",
+      "category": "Petek & Tesisat"
+    },
+    {
+      "title": "Kombi Montajı",
+      "shortTitle": "Kombi Montajı",
+      "slug": "kombi-montaji",
+      "summary": "Yeni kombinizin yer seçimi, bağlantı ve devreye alma işlemlerini güvenli şekilde tamamlayıp hazır teslim ediyoruz.",
+      "category": "Montaj"
+    },
+    {
+      "title": "Radyatör Temizliği ve Bakımı",
+      "shortTitle": "Radyatör Bakımı",
+      "slug": "radiator-temizligi-bakimi",
+      "summary": "Peteklerde soğuk nokta, tıkanıklık veya ses varsa radyatör temizliği ile ısınma sorununu gidermeye yardımcı oluyoruz.",
+      "category": "Petek & Tesisat"
+    },
+    {
+      "title": "Tesisat Kaçak Kontrolü",
+      "shortTitle": "Kaçak Kontrolü",
+      "slug": "tesisat-kacak-kontrolu",
+      "summary": "Kombi basıncı sık düşüyorsa veya ıslaklık belirtileri varsa kaçak ihtimalini kontrol edip gereksiz masraf riskini önleriz.",
+      "category": "Arıza"
+    }
+  ],
   "faq": [
     {
-      "question": "Motosiklet çanta ruhsata nasıl işletilir?",
-      "answer": "Motosiklete monte edilen arka çanta veya taşıma kutusu için yetkili makine mühendisimiz tarafından TSE onaylı tadilat projesi çizilir. Ardından TSE Araç Kontrol Merkezi incelemesi ve TÜVTÜRK tespit muayenesi yapılarak noterden yeni ruhsat teslim alınır."
+      "question": "Kombi arızası için aynı gün geliyor musunuz?",
+      "answer": "Evet, İstanbul’da arıza bildirimlerinize göre aynı gün içinde müdahale etmeye çalışıyoruz. Acil durumlarda önceliği sıcak su ve ısınma sorunu yaşayan müşterilerimize veriyoruz."
     },
     {
-      "question": "Araç projesi hangi durumlarda zorunludur?",
-      "answer": "Karavan dönüşümü, motor değişimi, çeki demiri montajı, koltuk sökümü veya ilavesi, LPG sökümü ve engelli aparatı gibi aracın fabrika çıkış özelliklerini değiştiren tüm işlemlerde yasal olarak araç projesi zorunludur."
+      "question": "Fiyatı işe başlamadan söylüyor musunuz?",
+      "answer": "Evet, arıza tespiti sonrası yapılacak işlemi ve fiyatı baştan paylaşıyoruz. Onayınız olmadan ekstra işlem yapmıyoruz, sürpriz maliyet çıkarmıyoruz."
     },
     {
-      "question": "TSE onay ve ruhsat süreci ne kadar sürer?",
-      "answer": "Teknik evraklarınız ve montaj faturanız hazır olduğunda proje çizimi ve TSE 360 sistemine dosya yükleme işlemi aynı gün içinde tamamlanır. Randevu sonrasında muayene ve noter tesciliyle süreç hızla sonuçlandırılır."
+      "question": "Kombi bakımı ne kadar sürer?",
+      "answer": "Bakım süresi kombinin durumuna göre değişir, ancak genel kontroller ve temizlik genelde kısa sürer. Evi dağıtmadan, temiz ve düzenli bir servis anlayışıyla çalışırız."
+    },
+    {
+      "question": "Petek temizliği gerçekten işe yarıyor mu?",
+      "answer": "Peteklerin bazı bölümleri ısınmıyorsa veya kombi zorlanıyorsa temizlik ciddi fark yaratabilir. Düzenli bakım ve temizlikle ısınma daha verimli hale gelir."
     }
   ],
-  "ctaLabel": "Teklif Al"
+  "ctaLabel": "Acil Servis Çağır"
 }
