@@ -16,5 +16,5 @@ TSE Araç Kontrol Merkezi (AKM) sürecinde her tadilat işlemi için aynı evrak
 - Araç üzerindeki mekanik montaj ve tadilat tamamlanmadan proje talep etmek.
 - Ürün faturalarını veya ekipman tip onay belgelerini dosyaya eklememek.
 - Ruhsat bilgilerindeki (ağırlık, koltuk sayısı, yakıt cinsi) değişiklikleri ön kontrolde doğrulamamak.
-- Muayene öncesi teknik çizim ölçülerini fiziki araçla karşılaştırmamak. Sorunsuz bir süreç için [Yeni Site uzman ekibine danışabilirsiniz](/iletisim).
+- Muayene öncesi teknik çizim ölçülerini fiziki araçla karşılaştırmamak. Sorunsuz bir süreç için [Kombici Abi uzman ekibine danışabilirsiniz](/iletisim).
 

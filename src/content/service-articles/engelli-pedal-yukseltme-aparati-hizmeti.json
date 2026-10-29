@@ -3,18 +3,18 @@
   "category": "Engelli Aparatları Çözümleri",
   "shortTitle": "Engelli Pedal Yükseltme Aparatı Hizmeti",
   "title": "Engelli Pedal Yükseltme Aparatı Hizmeti",
-  "summary": "Boyu pedallara erişmekte yetersiz kalan sürücüler için pedalların milimetrik olarak yükseltildiği aparatın TSE onaylı montaj, proje ve ruhsat işlemleri Yeni Site tarafından güvenle tamamlanır.",
+  "summary": "Boyu pedallara erişmekte yetersiz kalan sürücüler için pedalların milimetrik olarak yükseltildiği aparatın TSE onaylı montaj, proje ve ruhsat işlemleri Kombici Abi tarafından güvenle tamamlanır.",
   "heroEyebrow": "Engelli Aparatları Çözümleri",
   "heroTitle": "Engelli Pedal Yükseltme Aparatı Hizmeti",
-  "heroLead": "Boyu pedallara ulaşmakta zorlanan sürücüler için özel olarak geliştirilen pedal yükseltme aparatının araçlara montajı Yeni Site tarafından yapılır. Montajın yanı sıra TSE onaylı projelendirme, TÜVTÜRK proje onayı ve ruhsata işletme işlemleri eksiksiz biçimde tamamlanır.",
+  "heroLead": "Boyu pedallara ulaşmakta zorlanan sürücüler için özel olarak geliştirilen pedal yükseltme aparatının araçlara montajı Kombici Abi tarafından yapılır. Montajın yanı sıra TSE onaylı projelendirme, TÜVTÜRK proje onayı ve ruhsata işletme işlemleri eksiksiz biçimde tamamlanır.",
   "sections": [
     {
       "id": "karakas-arac-proje-pedal-yukseltme-aparati-hizmeti",
-      "heading": "Yeni Site – Pedal Yükseltme Aparatı Hizmeti",
+      "heading": "Kombici Abi – Pedal Yükseltme Aparatı Hizmeti",
       "blocks": [
         {
           "type": "p",
-          "text": "Yeni Site, bacak boyu nedeniyle pedallara erişemeyen sürücüler için pedal yükseltme tertibatının montajını gerçekleştirir. Uygulama sonrası TSE onaylı projelendirme, TÜVTÜRK onayı ve ruhsata işletme adımları da eksiksiz şekilde yürütülür."
+          "text": "Kombici Abi, bacak boyu nedeniyle pedallara erişemeyen sürücüler için pedal yükseltme tertibatının montajını gerçekleştirir. Uygulama sonrası TSE onaylı projelendirme, TÜVTÜRK onayı ve ruhsata işletme adımları da eksiksiz şekilde yürütülür."
         }
       ]
     },
@@ -55,7 +55,7 @@
     },
     {
       "id": "karakas-arac-proje-neler-sunar",
-      "heading": "Yeni Site Neler Sunar?",
+      "heading": "Kombici Abi Neler Sunar?",
       "blocks": [
         {
           "type": "ul",
@@ -91,7 +91,7 @@
     },
     {
       "id": "karakas-arac-proje-ile-yasal-ve-guvenli-surus",
-      "heading": "Yeni Site ile Yasal ve Güvenli Sürüş",
+      "heading": "Kombici Abi ile Yasal ve Güvenli Sürüş",
       "blocks": [
         {
           "type": "p",
@@ -118,7 +118,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Pedal mesafesi artık engel değil. +90 000 000 00 00 numarasından bizi arayabilir, bilgi@example.com adresinden yazabilir ya da www.example.com üzerinden randevu oluşturabilirsiniz. Yeni Site ile konforlu ve yasal sürüşe adım atın."
+          "text": "Pedal mesafesi artık engel değil. +90 000 000 00 00 numarasından bizi arayabilir, bilgi@example.com adresinden yazabilir ya da www.example.com üzerinden randevu oluşturabilirsiniz. Kombici Abi ile konforlu ve yasal sürüşe adım atın."
         }
       ]
     }

@@ -3,18 +3,18 @@
   "category": "Engelli Aparatları Çözümleri",
   "shortTitle": "Engelli Gaz-Fren Aparatı Hizmeti",
   "title": "Engelli Gaz-Fren Aparatı Hizmeti",
-  "summary": "Sağ veya her iki bacağını kullanamayan sürücüler için araçlara uygulanan el kumandalı gaz-fren aparatının TSE onaylı montaj, proje ve ruhsat işlemleri Yeni Site tarafından eksiksiz şekilde yürütülür.",
+  "summary": "Sağ veya her iki bacağını kullanamayan sürücüler için araçlara uygulanan el kumandalı gaz-fren aparatının TSE onaylı montaj, proje ve ruhsat işlemleri Kombici Abi tarafından eksiksiz şekilde yürütülür.",
   "heroEyebrow": "Engelli Aparatları Çözümleri",
   "heroTitle": "Engelli Gaz-Fren Aparatı Hizmeti",
-  "heroLead": "Sağ ya da her iki alt ekstremitesi engelli sürücüler için araçlara uygun gaz-fren aparatının montajı, TSE onaylı projelendirmesi, TÜVTÜRK onay süreci ve noter ruhsat işlemleri Yeni Site tarafından eksiksiz olarak gerçekleştirilir. Böylece sürüş hem yasal hem de güvenli hale gelir.",
+  "heroLead": "Sağ ya da her iki alt ekstremitesi engelli sürücüler için araçlara uygun gaz-fren aparatının montajı, TSE onaylı projelendirmesi, TÜVTÜRK onay süreci ve noter ruhsat işlemleri Kombici Abi tarafından eksiksiz olarak gerçekleştirilir. Böylece sürüş hem yasal hem de güvenli hale gelir.",
   "sections": [
     {
       "id": "karakas-arac-proje-gaz-fren-aparati-hizmeti",
-      "heading": "Yeni Site Gaz-Fren Aparatı Hizmeti",
+      "heading": "Kombici Abi Gaz-Fren Aparatı Hizmeti",
       "blocks": [
         {
           "type": "p",
-          "text": "Yeni Site, ayaklarını kullanamayan sürücüler için gaz ve frenin ele geçirildiği el kumandalı sistemlerin montajını ve tüm resmi süreçlerini tek elden üstlenir. Hedef; kullanıcının hiçbir yasal boşluk bırakmadan aracını güvenle kullanabilmesidir."
+          "text": "Kombici Abi, ayaklarını kullanamayan sürücüler için gaz ve frenin ele geçirildiği el kumandalı sistemlerin montajını ve tüm resmi süreçlerini tek elden üstlenir. Hedef; kullanıcının hiçbir yasal boşluk bırakmadan aracını güvenle kullanabilmesidir."
         }
       ]
     },
@@ -55,7 +55,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Yeni Site yalnızca aparat montajı değil, tüm teknik ve resmi süreçleri sizin adınıza yönetir."
+          "text": "Kombici Abi yalnızca aparat montajı değil, tüm teknik ve resmi süreçleri sizin adınıza yönetir."
         },
         {
           "type": "ol",
@@ -108,7 +108,7 @@
     },
     {
       "id": "neden-karakas-arac-proje",
-      "heading": "Neden Yeni Site?",
+      "heading": "Neden Kombici Abi?",
       "blocks": [
         {
           "type": "ul",

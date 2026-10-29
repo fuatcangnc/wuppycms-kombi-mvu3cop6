@@ -3,10 +3,10 @@
   "category": "Engelli Aparatları Çözümleri",
   "shortTitle": "Engelli Yerden Gaz-Fren Aparatı Hizmeti",
   "title": "Engelli Yerden Gaz-Fren Aparatı Hizmeti",
-  "summary": "Bacaklarını kullanamayan engelli sürücüler için araç zemininden çıkan kolla gaz ve fren kontrolü; Yeni Site'ta TSE onaylı proje ve ruhsat işlemleriyle sunulur.",
+  "summary": "Bacaklarını kullanamayan engelli sürücüler için araç zemininden çıkan kolla gaz ve fren kontrolü; Kombici Abi'ta TSE onaylı proje ve ruhsat işlemleriyle sunulur.",
   "heroEyebrow": "Engelli Aparatları Çözümleri",
   "heroTitle": "Engelli Yerden Gaz-Fren Aparatı Hizmeti",
-  "heroLead": "Yerden gaz-fren aparatı, bacaklarını kullanamayan bireylerin gaz ve freni araç zemininden çıkan özel bir kol yardımıyla yönetmesini sağlayan bir sürüş yardımcısıdır. Yeni Site, bu cihazın montajını, TSE belgeli projelendirmeyi ve ruhsata işletme sürecini uzman ekipleriyle yürütür.",
+  "heroLead": "Yerden gaz-fren aparatı, bacaklarını kullanamayan bireylerin gaz ve freni araç zemininden çıkan özel bir kol yardımıyla yönetmesini sağlayan bir sürüş yardımcısıdır. Kombici Abi, bu cihazın montajını, TSE belgeli projelendirmeyi ve ruhsata işletme sürecini uzman ekipleriyle yürütür.",
   "sections": [
     {
       "id": "kolay-kullanim-guvenli-surus",
@@ -45,7 +45,7 @@
     },
     {
       "id": "karakas-arac-proje-ile-alacaginiz-hizmetler",
-      "heading": "Yeni Site ile Alacağınız Hizmetler",
+      "heading": "Kombici Abi ile Alacağınız Hizmetler",
       "blocks": [
         {
           "type": "ul",
@@ -59,7 +59,7 @@
         },
         {
           "type": "p",
-          "text": "Bu adımların tamamı tek noktadan, Yeni Site güvencesiyle sizin adınıza yürütülür."
+          "text": "Bu adımların tamamı tek noktadan, Kombici Abi güvencesiyle sizin adınıza yürütülür."
         }
       ]
     },
@@ -82,11 +82,11 @@
     },
     {
       "id": "yasal-onay-sureci-karakasta-tamam",
-      "heading": "Yasal Onay Süreci Yeni Site'ta Tamam",
+      "heading": "Yasal Onay Süreci Kombici Abi'ta Tamam",
       "blocks": [
         {
           "type": "p",
-          "text": "Her aparat gibi yerden gaz-fren sistemi de TSE onaylı olmalı ve yasal olarak ruhsata işletilmelidir. Yeni Site bu konuda sizin yerinize şu adımları tamamlar:"
+          "text": "Her aparat gibi yerden gaz-fren sistemi de TSE onaylı olmalı ve yasal olarak ruhsata işletilmelidir. Kombici Abi bu konuda sizin yerinize şu adımları tamamlar:"
         },
         {
           "type": "ul",
@@ -108,7 +108,7 @@
         },
         {
           "type": "p",
-          "text": "Yeni Site ile gaz ve fren kontrolünü elinize alın; yerden sistemle güvenli sürüşe ilk adımı atın."
+          "text": "Kombici Abi ile gaz ve fren kontrolünü elinize alın; yerden sistemle güvenli sürüşe ilk adımı atın."
         }
       ]
     }
@@ -128,7 +128,7 @@
     },
     {
       "q": "Montaj sonrası yasal süreç ne kadar sürer?",
-      "a": "Süre aracın durumuna ve resmi kurum işlemlerinin yoğunluğuna göre değişir. Yeni Site tüm takibi sizin adınıza üstlenerek süreci hızlandırır."
+      "a": "Süre aracın durumuna ve resmi kurum işlemlerinin yoğunluğuna göre değişir. Kombici Abi tüm takibi sizin adınıza üstlenerek süreci hızlandırır."
     }
   ]
 }

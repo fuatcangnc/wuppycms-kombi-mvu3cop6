@@ -17,5 +17,5 @@ Karavan projesinde yerleşim planı, araç sınıfı (M1 / Özel Amaçlı Motoka
 2. Yatak, mutfak ünitesi, oturma grubu ve depolama alanlarının sabit montaj yerleşimi.
 3. Sabit donanımların ağırlık dağılımı ve şasi bağlantı güvenliği.
 4. Havalandırma, 220V/12V elektrik tesisatı ve varsa gaz ekipmanlarının CE/E belgeleri.
-5. TSE 360 proje onayı, TÜVTÜRK tadilat muayenesi ve noter ruhsat tescili adımlarının planlanması. Tüm aşamalar için [Yeni Site uzmanlığıyla iletişime geçebilirsiniz](/iletisim).
+5. TSE 360 proje onayı, TÜVTÜRK tadilat muayenesi ve noter ruhsat tescili adımlarının planlanması. Tüm aşamalar için [Kombici Abi uzmanlığıyla iletişime geçebilirsiniz](/iletisim).
 

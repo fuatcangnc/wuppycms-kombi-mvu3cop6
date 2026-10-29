@@ -3,10 +3,10 @@
   "category": "Engelli Aparatları Çözümleri",
   "shortTitle": "Engelli Soldan Direksiyon Altı Gaz-Fren Aparatı Hizmeti",
   "title": "Engelli Soldan Direksiyon Altı Gaz-Fren Aparatı Hizmeti",
-  "summary": "Bacaklarını kullanamayan engelli sürücüler için sol el ile gaz ve fren kontrolü sağlayan direksiyon altı aparatı; Yeni Site'ta TSE onaylı projeyle sunulur.",
+  "summary": "Bacaklarını kullanamayan engelli sürücüler için sol el ile gaz ve fren kontrolü sağlayan direksiyon altı aparatı; Kombici Abi'ta TSE onaylı projeyle sunulur.",
   "heroEyebrow": "Engelli Aparatları Çözümleri",
   "heroTitle": "Engelli Soldan Direksiyon Altı Gaz-Fren Aparatı Hizmeti",
-  "heroLead": "Soldan direksiyon altı gaz-fren aparatı, alt uzuvlarını kullanamayan ancak sol el hakimiyeti güçlü olan sürücüler için geliştirilen bir sürüş yardımcıdır. Yeni Site, bu cihazın montajını, TSE onaylı projelendirmeyi ve ruhsata işletme işlemlerini sizin adınıza eksiksiz yürütür.",
+  "heroLead": "Soldan direksiyon altı gaz-fren aparatı, alt uzuvlarını kullanamayan ancak sol el hakimiyeti güçlü olan sürücüler için geliştirilen bir sürüş yardımcıdır. Kombici Abi, bu cihazın montajını, TSE onaylı projelendirmeyi ve ruhsata işletme işlemlerini sizin adınıza eksiksiz yürütür.",
   "sections": [
     {
       "id": "sol-el-ile-konforlu-ve-guvenli-surus",
@@ -47,7 +47,7 @@
     },
     {
       "id": "karakas-arac-proje-neler-sunar",
-      "heading": "Yeni Site Neler Sunar?",
+      "heading": "Kombici Abi Neler Sunar?",
       "blocks": [
         {
           "type": "ul",
@@ -61,7 +61,7 @@
         },
         {
           "type": "p",
-          "text": "Tüm teknik ve yasal adımlar Yeni Site uzmanları tarafından sizin adınıza, eksiksiz biçimde yönetilir."
+          "text": "Tüm teknik ve yasal adımlar Kombici Abi uzmanları tarafından sizin adınıza, eksiksiz biçimde yönetilir."
         }
       ]
     },
@@ -84,11 +84,11 @@
     },
     {
       "id": "karakas-kalitesiyle-yola-devam",
-      "heading": "Yeni Site Kalitesiyle Yola Devam",
+      "heading": "Kombici Abi Kalitesiyle Yola Devam",
       "blocks": [
         {
           "type": "p",
-          "text": "Her araç ve her sürücünün gereksinimi farklıdır. Yeni Site olarak tüm aparat çözümlerini kişiye özel olarak uyguluyoruz; gerektiğinde araç başı keşif, ölçü ve uygulama desteği sağlıyoruz."
+          "text": "Her araç ve her sürücünün gereksinimi farklıdır. Kombici Abi olarak tüm aparat çözümlerini kişiye özel olarak uyguluyoruz; gerektiğinde araç başı keşif, ölçü ve uygulama desteği sağlıyoruz."
         },
         {
           "type": "ul",
@@ -111,7 +111,7 @@
         },
         {
           "type": "p",
-          "text": "Yeni Site ile sol elinizle güvenle sürün; gaz ve fren kontrolü sizde, tüm resmi işlemler bizde."
+          "text": "Kombici Abi ile sol elinizle güvenle sürün; gaz ve fren kontrolü sizde, tüm resmi işlemler bizde."
         }
       ]
     }

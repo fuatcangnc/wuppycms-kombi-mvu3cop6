@@ -3,10 +3,10 @@
   "category": "Engelli Aparatları Çözümleri",
   "shortTitle": "Engelli Sağ El Vites Değiştirme Aparatı Hizmeti",
   "title": "Engelli Sağ El Vites Değiştirme Aparatı Hizmeti",
-  "summary": "Sağ eliyle vites değişimi yapmak isteyen engelli sürücüler için Yeni Site; TSE onaylı aparat montajı, proje hazırlığı ve ruhsat işlemlerini eksiksiz sunar.",
+  "summary": "Sağ eliyle vites değişimi yapmak isteyen engelli sürücüler için Kombici Abi; TSE onaylı aparat montajı, proje hazırlığı ve ruhsat işlemlerini eksiksiz sunar.",
   "heroEyebrow": "Engelli Aparatları Çözümleri",
   "heroTitle": "Engelli Sağ El Vites Değiştirme Aparatı Hizmeti",
-  "heroLead": "Sağ el vites değiştirme aparatı, vites mekanizmasına entegre edilen özel bir bağlantı parçası aracılığıyla vites geçişlerinin sağ elle yapılmasını sağlayan bir araç tadilatıdır. Yeni Site, bu sistemin montajından TÜVTÜRK onayına ve ruhsata işletme aşamasına kadar tüm süreci uzman kadrosuyla yönetir.",
+  "heroLead": "Sağ el vites değiştirme aparatı, vites mekanizmasına entegre edilen özel bir bağlantı parçası aracılığıyla vites geçişlerinin sağ elle yapılmasını sağlayan bir araç tadilatıdır. Kombici Abi, bu sistemin montajından TÜVTÜRK onayına ve ruhsata işletme aşamasına kadar tüm süreci uzman kadrosuyla yönetir.",
   "sections": [
     {
       "id": "konforlu-ve-yasal-vites-kontrolu",
@@ -45,7 +45,7 @@
     },
     {
       "id": "karakas-arac-proje-hangi-hizmetleri-sunar",
-      "heading": "Yeni Site Hangi Hizmetleri Sunar?",
+      "heading": "Kombici Abi Hangi Hizmetleri Sunar?",
       "blocks": [
         {
           "type": "ul",
@@ -59,7 +59,7 @@
         },
         {
           "type": "p",
-          "text": "Bahsi geçen bütün adımlar Yeni Site'ın deneyimli ekibi tarafından sizin yerinize, baştan sona eksiksiz biçimde yürütülür."
+          "text": "Bahsi geçen bütün adımlar Kombici Abi'ın deneyimli ekibi tarafından sizin yerinize, baştan sona eksiksiz biçimde yürütülür."
         }
       ]
     },
@@ -107,7 +107,7 @@
         },
         {
           "type": "p",
-          "text": "Yeni Site ile sağ elinizle kontrollü ve yasal vites geçişi sağlayın; TSE onaylı sistem, yasal güvence ve uzman hizmet bir arada."
+          "text": "Kombici Abi ile sağ elinizle kontrollü ve yasal vites geçişi sağlayın; TSE onaylı sistem, yasal güvence ve uzman hizmet bir arada."
         }
       ]
     }
@@ -127,7 +127,7 @@
     },
     {
       "q": "Tüm işlemleri benim yapmam gerekiyor mu?",
-      "a": "Hayır. Yeni Site, montajdan TÜVTÜRK onayı ve ruhsata işletme aşamasına kadar tüm süreci sizin adınıza yönetir."
+      "a": "Hayır. Kombici Abi, montajdan TÜVTÜRK onayı ve ruhsata işletme aşamasına kadar tüm süreci sizin adınıza yönetir."
     }
   ]
 }

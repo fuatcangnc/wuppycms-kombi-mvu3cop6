@@ -3,18 +3,18 @@
   "category": "Engelli Aparatları Çözümleri",
   "shortTitle": "Engelli Debriyaj Aparatı Hizmeti",
   "title": "Engelli Debriyaj Aparatı Hizmeti",
-  "summary": "Sol bacağını kullanamayan sürücüler için düz vitesli araçlarda sol el ile debriyaj kontrolü sağlayan aparatın TSE onaylı montaj, proje ve ruhsat işlemleri Yeni Site güvencesiyle tek elden yürütülür.",
+  "summary": "Sol bacağını kullanamayan sürücüler için düz vitesli araçlarda sol el ile debriyaj kontrolü sağlayan aparatın TSE onaylı montaj, proje ve ruhsat işlemleri Kombici Abi güvencesiyle tek elden yürütülür.",
   "heroEyebrow": "Engelli Aparatları Çözümleri",
   "heroTitle": "Engelli Debriyaj Aparatı Hizmeti",
-  "heroLead": "Sol alt ekstremitesinde engel bulunan bireylerin düz vitesli araçları güvenle kullanabilmesi için debriyaj aparatının montajı, projelendirmesi ve resmi onay süreçleri Yeni Site tarafından anahtar teslim gerçekleştirilir. Böylece sürüş özgürlüğü hiçbir yasal ve teknik aksaklık yaşanmadan kullanıcıya kazandırılır.",
+  "heroLead": "Sol alt ekstremitesinde engel bulunan bireylerin düz vitesli araçları güvenle kullanabilmesi için debriyaj aparatının montajı, projelendirmesi ve resmi onay süreçleri Kombici Abi tarafından anahtar teslim gerçekleştirilir. Böylece sürüş özgürlüğü hiçbir yasal ve teknik aksaklık yaşanmadan kullanıcıya kazandırılır.",
   "sections": [
     {
       "id": "karakas-arac-proje-debriyaj-aparati-hizmeti",
-      "heading": "Yeni Site – Debriyaj Aparatı Hizmeti",
+      "heading": "Kombici Abi – Debriyaj Aparatı Hizmeti",
       "blocks": [
         {
           "type": "p",
-          "text": "Yeni Site, sol bacağını kullanamayan kişilerin düz vitesli otomobilleri rahatça sürebilmesi için özel olarak geliştirilen debriyaj tertibatının montajını, projelendirmesini, TÜVTÜRK onayını ve ruhsata işletme adımlarını tek elden yürütmektedir. Tüm süreç uzman ekip tarafından planlanır ve takip edilir."
+          "text": "Kombici Abi, sol bacağını kullanamayan kişilerin düz vitesli otomobilleri rahatça sürebilmesi için özel olarak geliştirilen debriyaj tertibatının montajını, projelendirmesini, TÜVTÜRK onayını ve ruhsata işletme adımlarını tek elden yürütmektedir. Tüm süreç uzman ekip tarafından planlanır ve takip edilir."
         }
       ]
     },
@@ -57,7 +57,7 @@
     },
     {
       "id": "karakas-arac-proje-hizmet-detaylari",
-      "heading": "Yeni Site Hizmet Detayları",
+      "heading": "Kombici Abi Hizmet Detayları",
       "blocks": [
         {
           "type": "ul",
@@ -77,7 +77,7 @@
     },
     {
       "id": "neden-karakas-arac-proje",
-      "heading": "Neden Yeni Site?",
+      "heading": "Neden Kombici Abi?",
       "blocks": [
         {
           "type": "ul",
@@ -97,7 +97,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Düz vitesli araçlarda özgürlüğünüzü kaybetmeyin. Proje sürecini başlatmak için +90 000 000 00 00 numarasından bizi arayabilir, bilgi@example.com adresinden yazabilir ya da www.example.com üzerinden ulaşabilirsiniz. Yeni Site ile sürüş konforunuza kaldığınız yerden devam edin."
+          "text": "Düz vitesli araçlarda özgürlüğünüzü kaybetmeyin. Proje sürecini başlatmak için +90 000 000 00 00 numarasından bizi arayabilir, bilgi@example.com adresinden yazabilir ya da www.example.com üzerinden ulaşabilirsiniz. Kombici Abi ile sürüş konforunuza kaldığınız yerden devam edin."
         }
       ]
     }

@@ -3,10 +3,10 @@
   "category": "Engelli Aparatları Çözümleri",
   "shortTitle": "Engelli Soldan Vites Kolu Aparatı Hizmeti",
   "title": "Engelli Soldan Vites Kolu Aparatı Hizmeti",
-  "summary": "Sağ elini kullanamayan engelli sürücüler için vites kontrolünü sola taşıyan özel aparat; Yeni Site'ta TSE onaylı proje ve ruhsat işlemleriyle sunulur.",
+  "summary": "Sağ elini kullanamayan engelli sürücüler için vites kontrolünü sola taşıyan özel aparat; Kombici Abi'ta TSE onaylı proje ve ruhsat işlemleriyle sunulur.",
   "heroEyebrow": "Engelli Aparatları Çözümleri",
   "heroTitle": "Engelli Soldan Vites Kolu Aparatı Hizmeti",
-  "heroLead": "Soldan vites kolu aparatı, sağ elini kullanamayan veya sağ tarafında hareket kısıtlılığı bulunan sürücüler için vites geçişini sol elle yapmayı sağlayan bir araç düzenlemesidir. Yeni Site, bu aparatın montajını, TSE onaylı projelendirmeyi ve ruhsata işletme sürecini eksiksiz biçimde yönetir.",
+  "heroLead": "Soldan vites kolu aparatı, sağ elini kullanamayan veya sağ tarafında hareket kısıtlılığı bulunan sürücüler için vites geçişini sol elle yapmayı sağlayan bir araç düzenlemesidir. Kombici Abi, bu aparatın montajını, TSE onaylı projelendirmeyi ve ruhsata işletme sürecini eksiksiz biçimde yönetir.",
   "sections": [
     {
       "id": "soldan-vites-kolu-aparati-nasil-uygulanir",
@@ -39,13 +39,13 @@
         },
         {
           "type": "p",
-          "text": "Yeni Site mühendisleri tarafından kişiye özel yerleştirilen bu aparat sayesinde kullanıcılar, sol el ile kolay ve güvenli biçimde vites değişimi yapabilir."
+          "text": "Kombici Abi mühendisleri tarafından kişiye özel yerleştirilen bu aparat sayesinde kullanıcılar, sol el ile kolay ve güvenli biçimde vites değişimi yapabilir."
         }
       ]
     },
     {
       "id": "karakas-arac-proje-ne-hizmet-veriyor",
-      "heading": "Yeni Site Ne Hizmet Veriyor?",
+      "heading": "Kombici Abi Ne Hizmet Veriyor?",
       "blocks": [
         {
           "type": "ul",
@@ -85,7 +85,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Yeni Site'nin sunduğu diğer aparat çözümleri gibi soldan vites kolu aparatı da TSE onaylıdır. Montaj sonrası hazırlanan proje dosyasıyla TÜVTÜRK onayı alınır ve aparat resmi olarak ruhsata işlenir."
+          "text": "Kombici Abi'nin sunduğu diğer aparat çözümleri gibi soldan vites kolu aparatı da TSE onaylıdır. Montaj sonrası hazırlanan proje dosyasıyla TÜVTÜRK onayı alınır ve aparat resmi olarak ruhsata işlenir."
         },
         {
           "type": "p",
@@ -103,7 +103,7 @@
         },
         {
           "type": "p",
-          "text": "Yeni Site ile araç kullanımındaki engelleri kaldırın; yasal, güvenli ve ergonomik çözümlerle yanınızdayız."
+          "text": "Kombici Abi ile araç kullanımındaki engelleri kaldırın; yasal, güvenli ve ergonomik çözümlerle yanınızdayız."
         }
       ]
     }
@@ -123,7 +123,7 @@
     },
     {
       "q": "Süreç tamamen sizin tarafınızdan mı yürütülüyor?",
-      "a": "Evet. Montajdan TÜVTÜRK onayı ve noter işlemlerine kadar tüm adımlar Yeni Site tarafından sizin adınıza yönetilir."
+      "a": "Evet. Montajdan TÜVTÜRK onayı ve noter işlemlerine kadar tüm adımlar Kombici Abi tarafından sizin adınıza yönetilir."
     }
   ]
 }

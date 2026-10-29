@@ -15,5 +15,5 @@ Araçta yapılan teknik değişikliğin güvenli, ölçülebilir ve mevzuata uyg
 
 Önce ruhsat ve araç bilgileri incelenir. Daha sonra uygulanacak işlemin ölçüleri, kullanılan ekipmanın belgeleri ve araç üzerindeki etkisi netleştirilir. Bu verilerle teknik dosya hazırlanır, gerekli [TSE 360](/karayolu-uygunluk-belgesi) kontrol ve TÜVTÜRK muayene adımları için yönlendirme yapılır.
 
-> Her araç ve uygulama farklıdır. Genel bilgiler, aracınıza özel teknik değerlendirmenin yerini tutmaz. Detaylı bilgi için [Yeni Site ile iletişime geçebilirsiniz](/iletisim).
+> Her araç ve uygulama farklıdır. Genel bilgiler, aracınıza özel teknik değerlendirmenin yerini tutmaz. Detaylı bilgi için [Kombici Abi ile iletişime geçebilirsiniz](/iletisim).
 

@@ -52,7 +52,7 @@ const googleMapsEmbedURL =
       { "@type": "ListItem", "position": 3, "name": service.shortTitle || service.title, "item": `https://example.com/${service.slug}` }
     ] },
     { "@type": "Service", "name": service.title, "description": service.summary,
-      "provider": { "@type": "LocalBusiness", "name": "Yeni Site", "telephone": siteSettings.phone,
+      "provider": { "@type": "LocalBusiness", "name": "Kombici Abi", "telephone": siteSettings.phone,
         "address": { "@type": "PostalAddress", "addressLocality": "Gaziosmanpaşa", "addressRegion": "İstanbul", "addressCountry": "TR" } },
       "url": `https://example.com/${service.slug}` },
     ...(faqs.length > 0 ? [{ "@type": "FAQPage", "mainEntity": faqs.map((f) => ({ "@type": "Question", "name": f.question, "acceptedAnswer": { "@type": "Answer", "text": f.answer } })) }] : [])
@@ -134,7 +134,7 @@ const googleMapsEmbedURL =
       <h2 class="mt-4 text-[clamp(2rem,4vw,3.2rem)] font-black leading-[1.03] tracking-[-0.05em] text-neutral-950">{article.heroTitle || service.title}</h2>
       <p class="mt-6 text-base sm:text-lg leading-relaxed text-neutral-700">{article.heroLead || service.summary}</p>
       <div class="mt-7 flex flex-wrap items-center gap-x-8 gap-y-2 border-t border-neutral-200 pt-5 text-sm text-neutral-500">
-        <p>Hazırlayan: <strong class="font-bold text-neutral-900">Yeni Site</strong></p>
+        <p>Hazırlayan: <strong class="font-bold text-neutral-900">Kombici Abi</strong></p>
         <p>Son güncelleme: <time datetime="2026-08-10">10 Ağustos 2026</time></p>
       </div>
     </div>
@@ -176,10 +176,10 @@ const googleMapsEmbedURL =
       <p class="mt-6 flex items-start gap-2 text-xs text-neutral-500"><Check class="mt-0.5 size-4 shrink-0 text-neutral-900" /><span>Teknik kapsam, araç bilgileri ve yapılan uygulama incelendikten sonra kesinleşir.</span></p>
     </section>
 
-    <!-- Yeni Site farkı -->
+    <!-- Kombici Abi farkı -->
     <section class="mt-16">
-      <h3 class="text-[13px] font-bold uppercase tracking-[0.14em] text-primary">Yeni Site farkı</h3>
-      <h2 class="mt-3 text-[clamp(1.8rem,3.5vw,2.65rem)] font-black leading-tight tracking-tight text-neutral-950">Neden Yeni Site?</h2>
+      <h3 class="text-[13px] font-bold uppercase tracking-[0.14em] text-primary">Kombici Abi farkı</h3>
+      <h2 class="mt-3 text-[clamp(1.8rem,3.5vw,2.65rem)] font-black leading-tight tracking-tight text-neutral-950">Neden Kombici Abi?</h2>
       <div class="mt-8 grid gap-4 lg:grid-cols-3">
         {trustReasons.map((reason: any, index: number) => (
           <article class="bg-[#f7f8f8] p-6 sm:p-7 border border-neutral-200">
@@ -269,7 +269,7 @@ const googleMapsEmbedURL =
             </div>
           </div>
           <div class="relative min-h-[360px] bg-neutral-100">
-            <iframe src={googleMapsEmbedURL} class="absolute inset-0 size-full border-0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Yeni Site Gaziosmanpaşa ofis konumu" allowfullscreen></iframe>
+            <iframe src={googleMapsEmbedURL} class="absolute inset-0 size-full border-0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Kombici Abi Gaziosmanpaşa ofis konumu" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -285,7 +285,7 @@ const googleMapsEmbedURL =
         e.preventDefault()
         const fullName = document.getElementById('quick-fullName')?.value || ''
         const phone = document.getElementById('quick-phone')?.value || ''
-        const serviceTitle = document.querySelector('h1')?.innerText?.trim() || 'Yeni Site Hizmeti'
+        const serviceTitle = document.querySelector('h1')?.innerText?.trim() || 'Kombici Abi Hizmeti'
         const lines = ['Merhaba,', `*${serviceTitle}* için teklif ve bilgi almak istiyorum.`, '', `*Ad Soyad:* ${fullName}`, `*Telefon:* ${phone}`]
         const whatsappNumber = '900000000000'
         window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank')
